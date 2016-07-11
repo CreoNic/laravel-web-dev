@@ -65,8 +65,8 @@
             <p><a class="btn btn-primary btn-lg" href="#" role="button">Popular Post</a></p>
           </div>
         </div>
-      </div>
-    </div>
+      </div> <!-- end of header .row -->
+    </div> <!-- end of .container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
