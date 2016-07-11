@@ -56,7 +56,17 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <h1>Hello, Laravel!</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <h1>Welcome to My Blog</h1>
+            <p class="lead">Thank you so much for visiting. This is my test website built with Laravel. Please read my popular post!</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Popular Post</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
