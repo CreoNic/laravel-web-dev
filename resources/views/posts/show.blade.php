@@ -15,12 +15,12 @@
 
       <dl class="dl-horizontal">
         <dt>Created At:</dt>
-        <dd>time</dd>
+        <dd>{{ $post->created_at }}</dd>
       </dl>
 
       <dl class="dl-horizontal">
         <dt>Last Updated:</dt>
-        <dd>time</dd>
+        <dd>{{ $post->updated_at }}</dd>
       </dl>
       <hr>
       <div class="row">
