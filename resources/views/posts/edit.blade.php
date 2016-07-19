@@ -1,5 +1,10 @@
 @extends('main')
 @section('title', '| Edit Blog Post')
+
+@section('stylesheets')
+  {!! Html::style('css/parsley.css') !!}
+@endsection
+
 @section('content')
 <div class="row">
 
@@ -40,3 +45,7 @@
 </div><!-- end of .row (form) -->
 
 @stop
+
+@section('scripts')
+  {!! Html::script('js/parsley.min.js') !!}
+@endsection
