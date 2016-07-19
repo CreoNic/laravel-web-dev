@@ -96,7 +96,25 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      // validate the data
+      $this->validate($request, array(
+        'title' => 'required|max:255',
+        'body' => 'required'
+      ));
+
+      // Save the data to the Database
+      $post = Post::find($id);
+
+      $post->title = $request->input('title');
+      $post->body = $request->input('body');
+
+      $post->save();
+
+      // set flash data with success message
+      Session::flash('Success', 'This post was successfully saved.');
+
+      // redirect with flash data t post.show
+      return redirect()->route('posts.show', $post->id);
     }
 
     /**
@@ -107,6 +125,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // validate the Data
+
+
     }
 }
