@@ -12,6 +12,9 @@ use Session;
 
 class PostController extends Controller
 {
+
+    //Add protection for all pages that uses PostController
+    //Only logged in users can access these pages.
     public function __construct()
     {
       $this->middleware('auth');
