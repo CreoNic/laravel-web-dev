@@ -25,7 +25,7 @@ class AddCategoryIdToPosts extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+            $table->dropColumn('category_id');
         });
     }
 }
