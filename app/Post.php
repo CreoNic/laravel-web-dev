@@ -11,4 +11,10 @@ class Post extends Model
     {
       return $this->belongsTo('App\Category');
     }
+
+    //Relationalship belongs to many
+    public function category()
+    {
+      return $this->belongsToMany('App\Tag');
+    }
 }
