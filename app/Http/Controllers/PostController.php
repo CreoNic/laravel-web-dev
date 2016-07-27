@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Category;
 use Session;
 
 
@@ -38,7 +39,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $categories = Category::all();
+        return view('posts.create')->withCategories($categories);
     }
 
     /**
@@ -51,15 +53,17 @@ class PostController extends Controller
     {
         // validate the data
         $this->validate($request, array(
-          'title' => 'required|max:255',
-          'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
-          'body' => 'required'
+          'title'       => 'required|max:255',
+          'slug'        => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
+          'category_id' => 'required|integer',
+          'body'        => 'required'
         ));
 
         // store in the Database using Elequent and not SQL commands
         $post = new Post;
         $post->title = $request->title;
         $post->slug = $request->slug;
+        $post->category_id = $request->category_id;
         $post->body = $request->body;
         $post->save();
 
