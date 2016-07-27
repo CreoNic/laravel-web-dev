@@ -16,6 +16,9 @@
     {{ Form::label('slug', 'Slug:',['class' => 'form-spacing-top']) }}
     {{ Form::text('slug', null, array('class' => 'form-control', 'required' => '', 'minlenght' => '5', 'maxlength' => '255')) }}
 
+    {{ Form::label('category_id', 'Category:', ['class' => 'form-spacing-top']) }}
+    {{ Form::select('category_id', $categories, null, ['class' => 'form-control']) }}
+
     {{ Form::label('body', 'Body:', ['class' => 'form-spacing-top']) }}
     {{ Form::textarea('body', null, ['class' => 'form-control']) }}
   </div>
