@@ -30,6 +30,6 @@ class CreatePostTagTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('post_tag');
     }
 }
