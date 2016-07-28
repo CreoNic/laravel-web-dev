@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Tag;
 use App\Category;
 use Session;
 
@@ -40,7 +41,9 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('posts.create')->withCategories($categories);
+        $tags = Tag::all();
+
+        return view('posts.create')->withCategories($categories)->withTags($tags);
     }
 
     /**
