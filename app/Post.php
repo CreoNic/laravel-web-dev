@@ -13,7 +13,7 @@ class Post extends Model
     }
 
     //Relationalship belongs to many
-    public function category()
+    public function tags()
     {
       return $this->belongsToMany('App\Tag');
     }
