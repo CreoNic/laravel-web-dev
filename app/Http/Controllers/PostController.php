@@ -70,6 +70,8 @@ class PostController extends Controller
         $post->body = $request->body;
         $post->save();
 
+        $post->tags()->sync($request->tags, false);
+
         //Save a flash session (use Put for full session)
         Session::flash('success', 'The blog post was successfully saved!');
 
