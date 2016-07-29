@@ -10,12 +10,12 @@
     <p class="lead">{{ $post->body }}</p>
 
     <hr>
-    <div class="tags"
+    <div class="tags">
       @foreach($post->tags as $tag)
         <span class="label label-default">{{ $tag->name }}</span>
       @endforeach
     </div>
-    
+
 
   </div>
 
