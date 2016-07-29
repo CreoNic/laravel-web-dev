@@ -108,8 +108,15 @@ class PostController extends Controller
           $cats[$category->id] = $category->name;
         }
 
+        $tags = Tag::all();
+        $tags2 = array();
+        foreach ($tags as $tag){
+          $tags2[$tag->id] = $tag->name;
+        }
+
+
         // return the view and pass in the var we previously created
-        return view('posts.edit')->withPost($post)->withCategories($cats);
+        return view('posts.edit')->withPost($post)->withCategories($cats)->withTags($tags2);
     }
 
     /**
