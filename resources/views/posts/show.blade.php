@@ -15,6 +15,7 @@
         <span class="label label-default">{{ $tag->name }}</span>
       @endforeach
     </div>
+    
 
   </div>
 
