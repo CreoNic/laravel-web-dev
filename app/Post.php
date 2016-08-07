@@ -17,4 +17,10 @@ class Post extends Model
     {
       return $this->belongsToMany('App\Tag');
     }
+
+    // Relationalship has many.
+    public function comments()
+    {
+      return $this->hasMany('App\Comment');
+    }
 }
