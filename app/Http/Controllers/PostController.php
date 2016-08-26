@@ -10,6 +10,7 @@ use App\Tag;
 use App\Category;
 use Session;
 use Purifier;
+use Image;
 
 
 class PostController extends Controller
@@ -68,6 +69,17 @@ class PostController extends Controller
         $post->slug = $request->slug;
         $post->category_id = $request->category_id;
         $post->body = Purifier::clean($request->body);
+
+        // save our image
+        if($request->hasFile('featured_image')){
+          $image = $request->file('featured_image');
+          $filename = time() . '.' . $image->getClientOriginalExtension();
+          $location = public_path('images/' . $filename);
+          Image::make($image)->resize(800, 400)->save($location);
+
+          $post->image = $filename;
+
+        }
         $post->save();
 
         $post->tags()->sync($request->tags, false);
